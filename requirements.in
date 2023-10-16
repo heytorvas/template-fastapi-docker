@@ -1,0 +1,7 @@
+dynaconf
+fastapi
+httpx
+pytest
+pytest-asyncio
+pytest-cov
+uvicorn

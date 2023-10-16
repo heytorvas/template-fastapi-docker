@@ -1,0 +1,57 @@
+# A list of rule codes or prefixes to enable.
+select = ["ALL"]
+
+# Enable autofix behavior by-default when running ruff
+fix = true
+
+# Enumerate all fixed violations.
+show-fixes = true
+
+# Whether to enforce exclude and extend-exclude patterns, even for paths that are passed to Ruff explicitly
+force-exclude = true
+
+# Rules reference https://beta.ruff.rs/docs/rules
+ignore = [
+    "A",  # (flake8-builtins (A)) https://beta.ruff.rs/docs/rules/#flake8-builtins-a
+    "ANN002",  # (missing-type-args) Missing type annotation for *{name}
+    "ANN003",  # (missing-type-kwargs) Missing type annotation for **{name}
+    "ANN101",  # (missing-type-self) Missing type annotation for {name} in method
+    "ANN102",  # (missing-type-cls) Missing type annotation for {name} in classmethod
+    "ANN202",  # (missing-return-type-private-function) Missing return type annotation for private function {name}
+    "ANN401",  # (any-type) Dynamically typed expressions (typing.Any) are disallowed in {name}
+    "B008",  # (function-call-in-default-argument) Do not perform function call {name} in argument defaults
+    "COM",  # (flake8-commas (COM)) https://beta.ruff.rs/docs/rules/#flake8-commas-com
+    "D100",  # (undocumented-public-module) Missing docstring in public module
+    "D105",  # (undocumented-magic-method) Missing docstring in magic method
+    "D107",  # (undocumented-public-init) Missing docstring in _init_
+    "D203",  # (one-blank-line-before-class) 1 blank line required before class docstring
+    "D213",  # (multi-line-summary-second-line) Multi-line docstring summary should start at the second line
+    "D406",  # (new-line-after-section-name) Section name should end with a newline ("{name}")
+    "D407",  # (dashed-underline-after-section) Missing dashed underline after section ("{name}")
+    "EM",  # (flake8-errmsg (EM)) https://beta.ruff.rs/docs/rules/#flake8-errmsg-em
+    "FBT001", # (boolean-type-hint-positional-argument) Boolean positional arg in function definition
+    "FBT002", # (boolean-default-value-positional-argument) Boolean default value in function definition
+    "FIX",  # (flake8-fixme (FIX)) https://beta.ruff.rs/docs/rules/#flake8-fixme-fix
+    "I",  # (isort (I)) https://beta.ruff.rs/docs/rules/#isort-i
+    "I001",  # (unsorted-imports) Import block is un-sorted or un-formatted
+    "INP001",  # (implicit-namespace-package) File {filename} is part of an implicit namespace package. Add an _init_.py.
+    "PLR0913", # (too-many-arguments) Too many arguments to function call ({c_args} > {max_args})
+    "Q000",  # (bad-quotes-inline-string) Single quotes found but double quotes preferred
+    "SIM108",  # (if-else-block-instead-of-if-exp) Use ternary operator {contents} instead of if-else-block
+    "T20",  # (flake8-print (T20)) https://beta.ruff.rs/docs/rules/#flake8-print-t20
+    "TD",  # (flake8-todos (TD)) https://beta.ruff.rs/docs/rules/#flake8-todos-td
+    "UP007",  # (non-pep604-annotation) Use X | Y for type annotations
+    "UP038", # (non-pep604-isinstance) Use X | Y in {} call instead of (X, Y)
+]
+
+# A list of rule codes or prefixes to consider non-autofix-able.
+unfixable = [
+    "T20"  # (flake8-print (T20)) https://beta.ruff.rs/docs/rules/#flake8-print-t20
+]
+
+# A list of mappings from file pattern to rule codes or prefixes to exclude, when considering any matching files.
+[per-file-ignores]
+"tests/" = [
+    "D",  # (pydocstyle (D)) https://beta.ruff.rs/docs/rules/#pydocstyle-d
+    "S101",  # (assert) Use of assert detected
+]
